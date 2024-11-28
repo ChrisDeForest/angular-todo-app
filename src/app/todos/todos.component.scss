@@ -12,6 +12,8 @@
 
 h2.subtitle {
   padding-bottom: 21px;
+  color: darkslategray;
+  font-weight: bold;
 }
 
 .container {
@@ -25,4 +27,51 @@ h2.subtitle {
   border-radius: 4px;
   margin-top: -68px;
   box-shadow: 0px 4px 12px rgba(black, 0.08);
+}
+
+.todo-item {
+  color: #333;
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  padding: 35px 15px;
+  border-bottom: 1px solid #f2f3f5;
+  cursor: pointer;
+  &.completed {
+    color: #aaa;
+
+  }
+}
+
+.todo-item .check-box {
+  display: flex;
+  flex-shrink: 0;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  height: 28px;
+  width: 28px;
+  margin-right: 20px;
+  transition: background-color 0.2s;
+  span.material-symbols-outlined {
+    font-size: 20px;
+    margin: auto;
+    opacity: 0; 
+    transition: opacity 0.2s;
+    color: #333;
+  }
+}
+
+.todo-item:hover .check-box {
+  background: #eee;
+  span.material-symbols-outlined {
+    opacity: 0.38;
+  }
+}
+
+.todo-item.completed .check-box {
+  background: rgb(11, 223, 170);
+  border-color: rgb(11, 223, 170);
+  span.material-symbols-outlined {
+    opacity: 1;
+  }
 }
