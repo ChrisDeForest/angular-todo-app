@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="add-todo-box">
-    <form>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
 
       <h2 class="subtitle is-5">New Todo</h2>
 
@@ -32,15 +32,13 @@
     
     <div class="todos-list">
 
-      <div class="todo-item completed">
+      <div class="todo-item" *ngFor="let todo of todos" [ngClass]="{ completed: todo.completed }">
 
         <div class="check-box">
           <span class="material-symbols-outlined">check</span>
         </div>
 
-        <div class="todo-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto facilis est adipisci ratione earum fuga enim, nam deleniti minima excepturi. Dicta, quam odit voluptatum dignissimos et neque dolore unde quaerat.
-        </div>
+        <div class="todo-text">{{ todo.text }}</div>
 
         <div class="todo-controls-box">
           <div class="todo-control-button">
@@ -51,27 +49,6 @@
           </div>
         </div>
 
-      </div>
-
-      <div class="todo-item">
-
-        <div class="check-box">
-          <span class="material-symbols-outlined">check</span>
-        </div>
-
-        <div class="todo-text">
-          This line only has one line of text.
-        </div>
-
-        <div class="todo-controls-box">
-          <div class="todo-control-button">
-            <span class="material-symbols-outlined">edit</span>
-          </div>
-          <div class="todo-control-button is-danger">
-            <span class="material-symbols-outlined">delete</span>
-          </div>
-        </div>
-        
       </div>
 
     </div>
