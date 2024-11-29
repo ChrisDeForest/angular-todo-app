@@ -1,16 +1,14 @@
-<div class="todos-list">
-    <div class="todo-item" [ngClass]="{ completed: todo?.completed }">
-      <div class="check-box">
+<div class="todo-item" (click)="onTodoClicked()" [ngClass]="{ completed: todo?.completed }">
+    <div class="check-box">
         <span class="material-icons">check</span>
-      </div>
-      <div class="todo-text">{{ todo?.text }}</div>
-      <div class="todo-controls-box">
+    </div>
+    <div class="todo-text">{{ todo?.text }}</div>
+    <div class="todo-controls-box">
         <div class="todo-control-button">
-          <span class="material-icons">edit</span>
+            <span class="material-icons">edit</span>
         </div>
         <div class="todo-control-button is-danger">
-          <span class="material-icons">delete</span>
+            <span class="material-icons">delete</span>
         </div>
-      </div>
     </div>
-  </div>
+</div>

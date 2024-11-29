@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DataService } from '../data.service';
 import { Todo } from '../todo';
 import { CommonModule } from '@angular/common';
@@ -14,6 +14,11 @@ import { CommonModule } from '@angular/common';
 })
 export class TodoItemComponent{
   @Input() todo?: Todo;
+  @Output() todoClicked: EventEmitter<void> = new EventEmitter();
 
   constructor(private readonly dataService: DataService) { }
+
+  onTodoClicked(): void {
+    this.todoClicked.emit();
+  }
 }
