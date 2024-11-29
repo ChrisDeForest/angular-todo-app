@@ -15,10 +15,15 @@ import { CommonModule } from '@angular/common';
 export class TodoItemComponent{
   @Input() todo?: Todo;
   @Output() todoClicked: EventEmitter<void> = new EventEmitter();
+  @Output() editClicked: EventEmitter<void> = new EventEmitter();
 
   constructor(private readonly dataService: DataService) { }
 
   onTodoClicked(): void {
     this.todoClicked.emit();
+  }
+
+  onEditClicked(): void {
+    this.editClicked.emit();
   }
 }

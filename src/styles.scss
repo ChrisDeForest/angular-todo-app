@@ -2,6 +2,9 @@
 
 @import '../node_modules/bulma/bulma.scss';
 
+html, body { height: 100%; }
+body { margin: 0; }
+
 html, body, input.input, .form, .container, .box{
   background-color: white !important;  /* Apply white background to the entire page */
 }

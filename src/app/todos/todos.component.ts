@@ -31,7 +31,12 @@ export class TodosComponent implements OnInit{
     form.reset("");
   }
 
-  toggleCompleted(todo: Todo){
+  toggleCompleted(todo: Todo) {
     todo.completed = !todo.completed;
+  }
+
+  editTodo(todo: Todo) {
+    const index = this.todos.indexOf(todo);
+    // this.dataService.updateTodo
   }
 }
