@@ -1,7 +1,5 @@
 <section class="heading-section">
-
   <h1 class="title is-1 has-text-centered">Todos</h1>
-
 </section>
 
 <div class="container">
@@ -30,20 +28,7 @@
 <section class="section">
   <div class="container">
     <div class="todos-list">
-      <div class="todo-item" *ngFor="let todo of todos" [ngClass]="{ completed: todo.completed }">
-        <div class="check-box">
-          <span class="material-symbols-outlined">check</span>
-        </div>
-        <div class="todo-text">{{ todo.text }}</div>
-        <div class="todo-controls-box">
-          <div class="todo-control-button">
-            <span class="material-symbols-outlined">edit</span>
-          </div>
-          <div class="todo-control-button is-danger">
-            <span class="material-symbols-outlined">delete</span>
-          </div>
-        </div>
-      </div>
+      <app-todo-item *ngFor="let todo of todos" [todo]="todo" (click)="toggleCompleted(todo)"></app-todo-item>
     </div>
   </div>
 </section>
