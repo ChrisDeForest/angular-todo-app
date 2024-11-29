@@ -13,6 +13,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class TodosComponent implements OnInit{
   todos: Todo[] = [];
+  showValidationErrors: boolean = false;
   
   constructor(private readonly dataService: DataService) {
   }
@@ -21,15 +22,10 @@ export class TodosComponent implements OnInit{
     this.todos = this.dataService.getAllTodos();
   }
 
-  getText(todo: Todo) {
-    return todo.text;
-  }
-
-  getCompleted(todo: Todo) {
-    return todo.completed;
-  }
-
-  onFormSubmit(form: NgForm): void {
+  onFormSubmit(form: NgForm): any {
+    console.log("FORM SUBMITTED");
     console.log(form);
+    if (form.invalid) return this.showValidationErrors = true;
+    this.dataService.addTodo({ text: form.value.text, completed: false });
   }
 }
