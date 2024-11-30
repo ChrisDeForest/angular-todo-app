@@ -16,7 +16,8 @@ export class TodoItemComponent{
   @Input() todo?: Todo;
   @Output() todoClicked: EventEmitter<void> = new EventEmitter();
   @Output() editClicked: EventEmitter<void> = new EventEmitter();
-
+  @Output() deleteClicked: EventEmitter<void> = new EventEmitter();
+  
   constructor(private readonly dataService: DataService) { }
 
   onTodoClicked(): void {
@@ -25,5 +26,9 @@ export class TodoItemComponent{
 
   onEditClicked(): void {
     this.editClicked.emit();
+  }
+
+  onDeleteClicked(): void {
+    this.deleteClicked.emit();
   }
 }
