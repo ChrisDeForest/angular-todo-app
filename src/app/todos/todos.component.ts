@@ -4,6 +4,8 @@ import { DataService } from '../data.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-todos',
@@ -16,7 +18,7 @@ export class TodosComponent implements OnInit{
   todos: Todo[] = [];
   showValidationErrors: boolean = false;
   
-  constructor(private readonly dataService: DataService) {
+  constructor(private readonly dataService: DataService, private readonly dialog: MatDialog) {
   }
   
   ngOnInit(): void {
@@ -37,6 +39,14 @@ export class TodosComponent implements OnInit{
 
   editTodo(todo: Todo) {
     const index = this.todos.indexOf(todo);
-    // this.dataService.updateTodo
+    let dialogRef = this.dialog.open(EditTodoDialogComponent, {
+      width: '800px',
+      data: todo,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.dataService.updateTodo(index, result);
+      }
+    });
   }
 }

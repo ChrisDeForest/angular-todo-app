@@ -1,1 +1,35 @@
-<p>edit-todo-dialog works!</p>
+<h1 class="title has-text-grey-dark">Edit To-do</h1>
+<div mat-dialog-content>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+        <div class="field">
+            <div class="control">
+                <input 
+                type="text" 
+                class="input" 
+                [ngModel]="todo.text" 
+                ngModel 
+                #todoTextField="ngModel"
+                name="text" 
+                required
+                minlength="2"
+                placeholder="Type todo text here...">
+            </div>
+        </div>
+        <div *ngIf="todoTextField.invalid && showValidationErrors">
+            <p class="help is-danger" *ngIf="todoTextField.errors?.['required']">To-do must have text</p>
+            <p class="help is-danger" *ngIf="todoTextField.errors?.['minlength']">To-do text must be at least 2 characters</p>
+        </div>
+        <br>
+        <div class="field is-grouped is-grouped-right">
+            <div class="control">
+                <button type="button" class="button is-light" (click)="close()">Cancel</button>
+            </div>
+            <div class="control">
+                <button type="submit" class="button alt-gradient-button">
+                    <span class="material-icons">save </span> Save 
+                </button>
+            </div>
+            
+        </div>
+    </form>
+</div>
