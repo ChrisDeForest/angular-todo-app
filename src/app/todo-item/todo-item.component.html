@@ -4,10 +4,10 @@
     </div>
     <div class="todo-text">{{ todo?.text }}</div>
     <div class="todo-controls-box" (click)="$event.stopPropagation()">
-        <div class="todo-control-button" (click)="onEditClicked()">
+        <div class="todo-control-button" appTooltip="Edit To-do" (click)="onEditClicked()">
             <span class="material-icons">edit</span>
         </div>
-        <div class="todo-control-button is-danger" (click)="onDeleteClicked()">
+        <div class="todo-control-button is-danger" appTooltip="Delete To-do" (click)="onDeleteClicked()">
             <span class="material-icons">delete</span>
         </div>
     </div>
