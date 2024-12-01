@@ -1,5 +1,5 @@
 import { AfterViewInit, ContentChildren, Directive, QueryList } from '@angular/core';
-import { createSingleton, CreateSingleton } from 'tippy.js';
+import { createSingleton } from 'tippy.js';
 import { TooltipDirective } from './tooltip.directive';
 
 @Directive({
