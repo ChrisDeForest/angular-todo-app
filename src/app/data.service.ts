@@ -7,8 +7,8 @@ import { Todo } from './todo';
 export class DataService {
 
   todos: Todo[] = [
-    {text: "FINISH TESTING TODO APP", completed: true}, 
-    {text:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas incidunt expedita dicta nobis autem neque sed. Vero, sequi quos! Nulla exercitationem consectetur praesentium. Quis libero magni fuga consequatur, ipsum cum.", completed: false}
+    // {text: "FINISH TESTING TO-DO APP", completed: true}, 
+    // {text:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas incidunt expedita dicta nobis autem neque sed. Vero, sequi quos! Nulla exercitationem consectetur praesentium. Quis libero magni fuga consequatur, ipsum cum.", completed: false}
   ];
 
   constructor() { }

@@ -3,7 +3,7 @@
         <span class="material-icons">check</span>
     </div>
     <div class="todo-text">{{ todo?.text }}</div>
-    <div class="todo-controls-box" (click)="$event.stopPropagation()">
+    <div class="todo-controls-box" appTooltipSingleton (click)="$event.stopPropagation()">
         <div class="todo-control-button" appTooltip="Edit To-do" (click)="onEditClicked()">
             <span class="material-icons">edit</span>
         </div>

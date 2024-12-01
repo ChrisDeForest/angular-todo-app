@@ -14,7 +14,6 @@ export class TooltipDirective implements AfterViewInit, OnChanges{
   constructor(private readonly elRef: ElementRef) { }
 
   ngAfterViewInit(): void {
-    console.log(this.elRef.nativeElement);
     this.tippyInstance = tippy(this.elRef.nativeElement, {
       content: this.tooltipContent
     });
